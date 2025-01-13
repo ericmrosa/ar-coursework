@@ -57,7 +57,7 @@ function handleAnswer(selectedIndex) {
 
     answerButtons[selectedIndex].style.border = "12px solid white";
 
-    answerButtons[correctIndex].style.border = "12px solid green";
+    answerButtons[correctIndex].style.border = "12px solid #04e03f";
 
     if (selectedIndex === correctIndex) {
         correctAnswersCount++;
@@ -107,7 +107,7 @@ function showQuizPopup() {
     popup.style.display = "flex";
 
     // Start countdown
-    let countdown = 10;
+    let countdown = 5;
     const interval = setInterval(() => {
         countdown--;
         countdownElement.textContent = countdown;

@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 <body>
-
+    <button id="scantopic_button" onclick="location.href='/scan'"></button>
+    <button id="information_button" onclick="showPopup()"></button>
+    <div id="info_popup">
+        <span id="close_popup" onclick="hidePopup()">×</span>
+        <p><strong>Important Information:</strong></p>
+        <p>This is a maths quiz in which you will answer 3 short and easy questions. <br><br> This was made for the <strong>RO50</strong> coursework project of Augmented Reality. <br><br> To start simply press the <strong>Scan Topic</strong> button and point the camera at the piece of paper you were provided.</p>
+    </div>
+    <img id="overlay-image" src="/assets/images/home_background.png" alt="Overlay Image">
+    <script src="index.js"></script>
 </body>
 </html>
