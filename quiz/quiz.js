@@ -2,20 +2,20 @@
 const questions = [
     {
         title: "QUESTION 1",
-        question: "1+1",
-        answers: ["4", "2", "62", "9"],
-        correctAnswer: 1 // Index of the correct answer
-    },
-    {
-        title: "QUESTION 2",
-        question: "5*5",
-        answers: ["20", "10", "25", "30"],
+        question: "What is the square root of 25?",
+        answers: ["2.5", "6", "5", "7.5"],
         correctAnswer: 2
     },
     {
+        title: "QUESTION 2",
+        question: "In modulo 2 what is the sum of 101101 + 11001?",
+        answers: ["1001110", "1100110", "1000111", "1000110"],
+        correctAnswer: 3
+    },
+    {
         title: "QUESTION 3",
-        question: "10-7",
-        answers: ["4", "3", "7", "2"],
+        question: "What is the sum of all three angles in an equilateral triangle?",
+        answers: ["120°", "180°", "360°", "240°"],
         correctAnswer: 1
     }
 ];
@@ -49,7 +49,73 @@ function loadQuestion(index) {
         answerButtons[i].style.display = "block";
         answerButtons[i].style.border = "none";
     });
+
+    // Apply styles for specific questions
+    if (index === 0) { // QUESTION 1
+        for (let i = 0; i < answerTexts.length; i++) {
+            answerTexts[i].style.fontSize = "150px";
+        }
+
+        document.getElementById("answer_one").style.marginTop = "27%";
+        document.getElementById("answer_two").style.marginTop = "-33%";
+        document.getElementById("answer_three").style.marginTop = "17%";
+        document.getElementById("answer_four").style.marginTop = "-33%";
+       
+        document.getElementById("one_button").style.marginTop = "-62px";
+        document.getElementById("two_button").style.marginTop = "-62px";
+        document.getElementById("three_button").style.marginTop = "-70px";
+        document.getElementById("four_button").style.marginTop = "-70px";
+
+
+    } else if (index === 1) { // QUESTION 2
+        for (let i = 0; i < answerTexts.length; i++) {
+            answerTexts[i].style.fontSize = "100px";
+        }
+
+        document.getElementById("answer_one").style.marginTop = "26%";
+        document.getElementById("answer_two").style.marginTop = "-23%";
+        document.getElementById("answer_three").style.marginTop = "23%";
+        document.getElementById("answer_four").style.marginTop = "-22%";
+       
+        document.getElementById("one_button").style.marginTop = "-99px";
+        document.getElementById("two_button").style.marginTop = "-90px";
+        document.getElementById("three_button").style.marginTop = "-105px";
+        document.getElementById("four_button").style.marginTop = "-105px";
+
+    } else if (index === 2) { // QUESTION 3
+        for (let i = 0; i < answerTexts.length; i++) {
+            answerTexts[i].style.fontSize = "150px";
+        }
+
+        document.getElementById("answer_one").style.marginTop = "23%";
+        document.getElementById("answer_two").style.marginTop = "-33%";
+        document.getElementById("answer_three").style.marginTop = "16%";
+        document.getElementById("answer_four").style.marginTop = "-33%";
+
+        document.getElementById("answer_one").style.marginRight = "42%";
+        document.getElementById("answer_two").style.marginLeft = "49%";
+        document.getElementById("answer_three").style.marginLeft = "-42%";
+        document.getElementById("answer_four").style.marginRight = "-49%";
+       
+        document.getElementById("one_button").style.marginTop = "-73px";
+        document.getElementById("two_button").style.marginTop = "-73px";
+        document.getElementById("three_button").style.marginTop = "-70px";
+        document.getElementById("four_button").style.marginTop = "-70px";
+
+    } else {
+        for (let i = 0; i < answerTexts.length; i++) {
+            answerTexts[i].style.fontSize = "16px";
+        }
+
+        // Reset margin-top for all answer buttons
+        document.getElementById("one_button").style.marginTop = "0px";
+        document.getElementById("two_button").style.marginTop = "0px";
+        document.getElementById("three_button").style.marginTop = "0px";
+        document.getElementById("four_button").style.marginTop = "0px";
+    }
 }
+
+
 
 function handleAnswer(selectedIndex) {
     const question = questions[currentQuestionIndex];
@@ -85,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (refreshButton) {
         refreshButton.addEventListener('click', function () {
             currentQuestionIndex = 0;
+            correctAnswersCount = 0; // Reset score
             loadQuestion(currentQuestionIndex); 
         });        
     }
@@ -118,4 +185,3 @@ function showQuizPopup() {
         }
     }, 1000);
 }
-

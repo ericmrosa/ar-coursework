@@ -27,19 +27,14 @@ body, html {
     margin-top: 10%;
 }
 
-#question {
-    font-size: 85px;
-    font-weight: bold;
-    font-family: Arial;
-    color: white;
-    z-index: 12;
-    position: relative;
+#question_text {
+    width: 80%;
     text-align: center;
-    margin-top: 15%;
+    margin: auto;
 }
 
 #question {
-    font-size: 85px;
+    font-size: 40px;
     font-weight: bold;
     font-family: Arial;
     color: white;
@@ -140,7 +135,7 @@ body, html {
 }
 
 #four_button {
-    background: transparent;
+    background: transparent; 
     border: none;
     cursor: pointer;
     position: fixed;

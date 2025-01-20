@@ -24,8 +24,6 @@ document.querySelectorAll('a-marker').forEach(marker => {
 function showButtonForMarker(markerId) {
   const routes = {
     'maths': 'maths', 
-    'biology': 'test',
-    'dna': 'DNA',
   };
 
   // Check if the marker ID exists in the routes object
@@ -34,7 +32,7 @@ function showButtonForMarker(markerId) {
     startButton.style.display = 'block';
     startButton.onclick = function () {
       // Redirect to the appropriate URL when the button is clicked
-      const quizUrl = `${window.location.origin}/quiz?subject=${subject}`;
+      const quizUrl = `${window.location.origin}/quiz`;
       console.log(`Redirecting to: ${quizUrl}`);
       window.location.href = quizUrl;
     };

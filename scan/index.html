@@ -2,8 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="/scan/scan.css">
-    <!--- <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/examples/vendor/aframe/build/aframe.min.js"></script>
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script> -->
+    <meta name="theme-color" content="#1c1c1c"/>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
@@ -12,45 +11,17 @@
     
   </head>
   <body>
-    <a-scene
-    vr-mode-ui="enabled: false;"
-    loading-screen="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-    id="scene"
-    embedded
-    gesture-detector
->
+    <a-scene vr-mode-ui="enabled: false;" loading-screen="enabled: false;" renderer="logarithmicDepthBuffer: true;" arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" id="scene" embedded gesture-detector>
 
       <!-- Assets -->
       <a-assets>
-          <a-asset-item id="DNA" src="/assets/models/DNA.glb"></a-asset-item>
+          <a-asset-item id="CALC" src="/assets/models/calculator.glb"></a-asset-item>
       </a-assets>
           
       <!-- Markers -->
-      <a-marker preset="pattern" type="pattern" url="https://raw.githubusercontent.com/lbelfield/augmented-reality/master/src/components/trainTicket/train-ticket.patt">
-        <a-entity position="0 0 0" scale="0.30 0.30 0.30" gltf-model="#DNA"></a-entity>
+      <a-marker id="maths" preset="pattern" type="pattern" url="/assets/markers/maths.patt">
+        <a-entity position="0 0 0" scale="0.10 0.10 0.10" gltf-model="#CALC"></a-entity>
       </a-marker>
-
-      <!-- <a-marker
-            id="animated-marker-maths"
-            type="pattern"
-            preset="custom"
-            url="/assets/markers/maths.patt"
-            raycaster="objects: .clickable"
-            emitevents="true"
-            cursor="fuse: false; rayOrigin: mouse;"
-        >
-            <a-entity
-                id="maths_model"
-                scale="0.30 0.30 0.30"
-                animation-mixer="loop: repeat"
-                gltf-model="#DNA"
-                class="clickable"
-                gesture-handler
-            ></a-entity>
-        </a-marker>
-        --->
 
       <!-- Lighting -->
       <a-light type="ambient" color="#888"></a-light>
